@@ -26,16 +26,27 @@ void JLivecoin::getExchengeTicker(QString currencyPair)
 
 void JLivecoin::gotData(QNetworkReply *reply)
 {
-    qDebug()<<reply->url().toString();
     if(!reply->error())
     {
-        qDebug()<<"Good";
+        qDebug()<<reply->url().toString();
+        QString url = reply->url().toString();
+        if(url.indexOf("/exchange/ticker"))
+        {
+            if(!(url.indexOf("currencyPair=") == -1))
+            {
+                qDebug()<<"1";
+                QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+                QJsonObject root = doc.object();
+                qDebug()<<root;
 
-        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
-        QJsonArray arr = doc.array();
+            }else{
+                qDebug()<<"2";
+                QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+                QJsonArray root = doc.array();
+                qDebug()<<root.at(0).toObject();
+            }
 
-
-        qDebug()<<arr.at(1).toObject();
+        }
     }else{
         qDebug()<<"Error: "<<reply->errorString()<<'.';
     }

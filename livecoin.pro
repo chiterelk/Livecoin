@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    jlivecoin.cpp
+    jlivecoin.cpp \
+    jticker.cpp
 
 HEADERS += \
         mainwindow.h \
-    jlivecoin.h
+    jlivecoin.h \
+    jticker.h
 
 FORMS += \
         mainwindow.ui
