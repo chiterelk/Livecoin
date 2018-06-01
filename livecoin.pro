@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network websockets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,12 +27,22 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     jlivecoin.cpp \
-    jticker.cpp
+    jticker.cpp \
+    jmaxbidminask.cpp \
+    jbalance.cpp \
+    jorder.cpp \
+    jwslivecoin.cpp \
+    jwsbitfinex.cpp
 
 HEADERS += \
         mainwindow.h \
     jlivecoin.h \
-    jticker.h
+    jticker.h \
+    jmaxbidminask.h \
+    jbalance.h \
+    jorder.h \
+    jwslivecoin.h \
+    jwsbitfinex.h
 
 FORMS += \
         mainwindow.ui

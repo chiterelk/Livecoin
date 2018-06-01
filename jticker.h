@@ -18,16 +18,16 @@ public:
     double getBest_ask(){   return best_ask_; };
     double getSpread(){ return spread_; }
 
-    void last(double _last);
-    void high(double _higt);
-    void low(double _low);
-    void volume(double _volume);
-    void vwap(double _vwap);
-    void max_bid(double _max_bid);
-    void min_ask(double _min_ask);
-    void best_bid(double _best_bid);
-    void best_ask(double _best_ask);
-    void bidAndAsk(double _best_bid, double _best_ask);
+    void setLast(double _last);
+    void setHigh(double _higt);
+    void setLow(double _low);
+    void setVolume(double _volume);
+    void setVwap(double _vwap);
+    void setMax_bid(double _max_bid);
+    void setMin_ask(double _min_ask);
+    void setBest_bid(double _best_bid);
+    void setBest_ask(double _best_ask);
+    void setBidAndAsk(double _best_bid, double _best_ask);
 
 private:
     double last_;
